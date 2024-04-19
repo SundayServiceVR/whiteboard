@@ -9,7 +9,7 @@ on:
 
 permissions:
   checks: write
-  contents: read
+  contents: write
   pull-requests: write
 
 jobs:
@@ -32,7 +32,7 @@ jobs:
     - name: Modify README.md
       uses: jaywcjlove/github-action-modify-file-content@main
       with:
-        path: TimeGMT.txt
+        path: TimesGMT.txt
         body: "${{ steps.gmt-boardtext.outputs.WHITEBOARD }}"
         overwrite: 'true'
 
