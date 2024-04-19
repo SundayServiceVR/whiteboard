@@ -18,7 +18,9 @@ jobs:
     steps:
 
     - name: Fetch Board String (GMT)
-      run: 'curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt >> $GITHUB_OUTPUT'
+      run: |
+        boardtext=$(curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt);
+        echo "boardtext=$boardtext" >> $GITHUB_OUTPUT'
       id: gmt-boardtext
 
     - name: Modify README.md
