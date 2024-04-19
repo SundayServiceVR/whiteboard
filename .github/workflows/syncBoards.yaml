@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - uses: checkout/@v4
+
     - name: Fetch Board String (GMT)
       id: gmt-boardtext
       run: |
@@ -32,4 +34,21 @@ jobs:
       with:
         path: TimeGMT.txt
         body: "${{ steps.gmt-boardtext.outputs.WHITEBOARD }}"
+        overwrite: 'true'
+
+    - name: Fetch Board String (GMT)
+      id: au-boardtext
+      run: |
+          {
+              echo 'WHITEBOARD<<EOF'
+              curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt
+              echo EOF
+          } >> "${GITHUB_OUTPUT}"
+    
+  
+    - name: Modify README.md
+      uses: jaywcjlove/github-action-modify-file-content@main
+      with:
+        path: TimeGMT.txt
+        body: "${{ steps.au-boardtext.outputs.WHITEBOARD }}"
         overwrite: 'true'
