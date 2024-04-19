@@ -4,6 +4,7 @@ name: Deploy to Firebase Hosting on PR
 on:
     schedule:
       - cron: "0 0 * * *"   #Every Day at Midnight
+      
     workflow_dispatch:
 
 permissions:
