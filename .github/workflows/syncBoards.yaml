@@ -1,0 +1,39 @@
+name: Deploy to Firebase Hosting on PR
+
+#0 0 * * * 
+on:
+    schedule:
+      - cron: "0 0 * * *"   #Every Day at Midnight
+    workflow_dispatch:
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  build_and_preview:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Fetch Board String (GMT)
+      run: 'curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt >> $GITHUB_OUTPUT'
+      id: gmt-boardtext
+
+    - name: Modify README.md
+      uses: jaywcjlove/github-action-modify-file-content@main
+      with:
+        path: TimeGMT.txt
+        body: "${{ steps.gmt-boardtext.outputs.status }}"
+        overwrite: 'true'
+
+    - name: Fetch Board String (AU)
+      run: 'curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=au >> $GITHUB_OUTPUT'
+      id: au-boardtext
+  
+    - name: Modify README.md
+      uses: jaywcjlove/github-action-modify-file-content@main
+      with:
+        path: TimeAU.txt
+        body: "${{ steps.au-boardtext.outputs.status }}"
+        overwrite: 'true'
