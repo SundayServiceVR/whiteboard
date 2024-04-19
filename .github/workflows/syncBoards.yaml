@@ -4,6 +4,7 @@ name: Sync Board Texts
 on:
     schedule:
       - cron: "0 0 * * *"   #Every Day at Midnight
+      - cron: "*/30 * * * SUN"   #Every 30 minutes, only on Sunday
       
     workflow_dispatch:
 
@@ -27,9 +28,26 @@ jobs:
         } >> "${GITHUB_OUTPUT}"
 
 
-    - name: Modify README.md
+    - name: Modify GMT Text
       uses: jaywcjlove/github-action-modify-file-content@main
       with:
         path: TimesGMT.txt
+        body: "${{ steps.gmt-boardtext.outputs.WHITEBOARD }}"
+        overwrite: 'true'
+
+    - name: Fetch Board String (GMT)
+      id: au-boardtext
+      run: |
+        {
+            echo 'WHITEBOARD<<EOF'
+            curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=au
+            echo EOF
+        } >> "${GITHUB_OUTPUT}"
+
+
+    - name: Modify AU Text
+      uses: jaywcjlove/github-action-modify-file-content@main
+      with:
+        path: TimesAU.txt
         body: "${{ steps.gmt-boardtext.outputs.WHITEBOARD }}"
         overwrite: 'true'
