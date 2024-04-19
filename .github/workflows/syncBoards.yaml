@@ -20,7 +20,7 @@ jobs:
     - name: Fetch Board String (GMT)
       run: |
         boardtext=$(curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt);
-        echo "boardtext=$boardtext" >> $GITHUB_OUTPUT'
+        echo "boardtext=$boardtext" >> $GITHUB_OUTPUT
       id: gmt-boardtext
 
     - name: Modify README.md
@@ -28,15 +28,4 @@ jobs:
       with:
         path: TimeGMT.txt
         body: "${{ steps.gmt-boardtext.outputs.status }}"
-        overwrite: 'true'
-
-    - name: Fetch Board String (AU)
-      run: 'curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=au >> $GITHUB_OUTPUT'
-      id: au-boardtext
-  
-    - name: Modify README.md
-      uses: jaywcjlove/github-action-modify-file-content@main
-      with:
-        path: TimeAU.txt
-        body: "${{ steps.au-boardtext.outputs.status }}"
         overwrite: 'true'
