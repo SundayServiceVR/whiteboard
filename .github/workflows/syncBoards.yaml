@@ -1,10 +1,10 @@
-name: Sync Board Texts
+name: Deploy to Firebase Hosting on PR
 
 #0 0 * * * 
 on:
     schedule:
-      - cron: "* * * * *"   #Every Day at Midnight
-
+      - cron: "0 0 * * *"   #Every Day at Midnight
+      
     workflow_dispatch:
 
 permissions:
