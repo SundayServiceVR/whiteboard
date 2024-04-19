@@ -31,5 +31,5 @@ jobs:
       uses: jaywcjlove/github-action-modify-file-content@main
       with:
         path: TimeGMT.txt
-        body: "${{ steps.gmt-boardtext.outputs.status }}"
+        body: "${{ steps.gmt-boardtext.outputs.WHITEBOARD }}"
         overwrite: 'true'
