@@ -1,4 +1,4 @@
-name: Deploy to Firebase Hosting on PR
+name: Sync Board Texts
 
 #0 0 * * * 
 on:
