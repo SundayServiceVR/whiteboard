@@ -19,7 +19,7 @@ jobs:
 
     - name: Fetch Board String (GMT)
       run: |
-        boardtext=$(curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt);
+        boardtext=$(curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt); \
         echo "boardtext=$boardtext" >> $GITHUB_OUTPUT
       id: gmt-boardtext
 
