@@ -18,8 +18,14 @@ jobs:
     steps:
 
     - name: Fetch Board String (GMT)
-      run: boardtext="$(curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt)"; echo "boardtext=$boardtext" >> "${GITHUB_OUTPUT}"
       id: gmt-boardtext
+      run: |
+        {
+            echo 'WHITEBOARD<<EOF'
+            curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt
+            echo EOF
+        } >> "${GITHUB_OUTPUT}"
+
 
     - name: Modify README.md
       uses: jaywcjlove/github-action-modify-file-content@main
