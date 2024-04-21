@@ -1,9 +1,8 @@
 Sunday Service
 2024-04-21
-Host: Strawbs
+Host: Wimby asdf
 
 Lineup: (times BST)
-8p Kittz
-9p bleatr
-10p WarneD1
-11p Icedog
+8p Test 1
+9p Test 2
+10p Test 3
