@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - uses: checkout/@v4
+
     - name: Fetch Board String (GMT)
       id: gmt-boardtext
       run: |
@@ -35,7 +37,7 @@ jobs:
         body: "${{ steps.gmt-boardtext.outputs.WHITEBOARD }}"
         overwrite: 'true'
 
-    - name: Fetch Board String (GMT)
+    - name: Fetch Board String (AU)
       id: au-boardtext
       run: |
         {
