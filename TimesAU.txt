@@ -1,8 +1,5 @@
 Sunday Service
 2024-04-21
-Host: Wimby asdf
+Host: 
 
 Lineup: (times BST)
-8p Test 1
-9p Test 2
-10p Test 3
