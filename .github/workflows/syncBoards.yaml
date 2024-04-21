@@ -18,8 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: checkout/@v4
-
     - name: Fetch Board String (GMT)
       id: gmt-boardtext
       run: |
