@@ -3,7 +3,7 @@
 Host: Frosty
 
 Lineup: (times BST)
-8p undefined
-8:30p undefined
-10p undefined
-2a undefined
+8p Wall 1 (Front Wall)
+8:30p Wall 2 (Left Wall)
+10p Wall 4 (Right wall [The Most Important Wall])
+2a Wall 3 (Back Wall)
