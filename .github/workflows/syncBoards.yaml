@@ -40,7 +40,7 @@ jobs:
       run: |
         {
             echo 'WHITEBOARD<<EOF'
-            curl https://nexteventboardanytz-diczrrhb6a-uc.a.run.app/?timezone=au-w "\n"
+            curl https://nexteventboardanytz-diczrrhb6a-uc.a.run.app/?timezone=au -w "\n"
             echo EOF
         } >> "${GITHUB_OUTPUT}"
 
