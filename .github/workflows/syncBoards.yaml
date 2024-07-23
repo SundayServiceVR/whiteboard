@@ -23,7 +23,7 @@ jobs:
       run: |
         {
             echo 'WHITEBOARD<<EOF'
-            curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=gmt
+            curl https://nexteventboardanytz-diczrrhb6a-uc.a.run.app/?timezone=gmt
             echo EOF
         } >> "${GITHUB_OUTPUT}"
 
@@ -40,7 +40,7 @@ jobs:
       run: |
         {
             echo 'WHITEBOARD<<EOF'
-            curl https://whiteboard-diczrrhb6a-uc.a.run.app/?path=au
+            curl https://nexteventboardanytz-diczrrhb6a-uc.a.run.app/?timezone=au
             echo EOF
         } >> "${GITHUB_OUTPUT}"
 
