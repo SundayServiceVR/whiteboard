@@ -6,10 +6,10 @@ Lineup: (times GMT)
 
 19:00 Strawberry Protato
 21:00 Frosty B2B Adjacent Silhouette
-22:00 Valant
-23:00 Bounce
+22:00 Valant  DEBUTT
+23:00 Bounce  DEBUTT
 00:00 Kima
 01:00 Johcaw
-02:00 Hobnoxus
-03:00 Defqon
+02:00 Hobnoxus  DEBUTT
+03:00 Defqon  DEBUTT
 04:00 Devv B2B DJ Tsiran
