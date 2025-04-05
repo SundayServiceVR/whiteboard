@@ -4,8 +4,8 @@ Host: Wimby
 
 Lineup: (times GMT)
 
-21:00
-22:00
-23:00
-00:00
-01:00
+21:00 Turnerrr
+22:00 Poofs The Mutt
+23:00 cdelansig
+00:00 DingoYabuki
+01:00 Dua
