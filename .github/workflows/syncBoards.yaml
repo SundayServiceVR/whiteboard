@@ -2,9 +2,9 @@ name: Sync Board Texts
 
 #0 0 * * * 
 on:
-    # schedule:
-    #   - cron: "0 0 * * *"   #Every Day at Midnight
-    #   - cron: "*/30 * * * SUN"   #Every 30 minutes, only on Sunday
+    schedule:
+      - cron: "0 0 * * *"   #Every Day at Midnight
+      - cron: "*/30 * * * SUN"   #Every 30 minutes, only on Sunday
       
     workflow_dispatch:
 
