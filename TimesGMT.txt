@@ -4,7 +4,7 @@ Host: Wimby
 
 Lineup: (times GMT)
 
-20:00 Frosty  DEBUTT
+20:00 VoxTried
 21:00 Nonpondo  DEBUTT
 22:00 DingoYabuki
 23:00 adjacent silhouette
