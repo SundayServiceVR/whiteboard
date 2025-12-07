@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
     - name: Fetch Board String (GMT)
       id: gmt-boardtext
       run: |
@@ -51,3 +54,13 @@ jobs:
         path: TimesAU.txt
         body: "${{ steps.au-boardtext.outputs.WHITEBOARD }}"
         overwrite: 'true'
+
+    - name: Fetch lineup poster image
+      run: |
+        chmod +x ./fetch_lineup_poster.sh
+        ./fetch_lineup_poster.sh
+
+    - name: Commit updated files (if changed)
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore: update board times and lineup poster"
