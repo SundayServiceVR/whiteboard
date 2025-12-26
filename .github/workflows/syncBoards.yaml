@@ -57,10 +57,14 @@ jobs:
 
     - name: Fetch lineup poster image
       run: |
-        chmod +x ./fetch_lineup_poster.sh
-        ./fetch_lineup_poster.sh
+        chmod +x ./fetch_poster.sh
+        ./fetch_poster.sh ".lineup_poster_url" "lineup_poster.png"
+
+    - name: Fetch host poster image
+      run: |
+        ./fetch_poster.sh ".event.reconciled.host.host_poster_path" "host_poster.png"
 
     - name: Commit updated files (if changed)
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-        commit_message: "chore: update board times and lineup poster"
+        commit_message: "chore: update board times, lineup poster, and host poster"
