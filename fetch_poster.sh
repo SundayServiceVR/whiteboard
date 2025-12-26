@@ -14,7 +14,7 @@ fi
 JSON_PATH="$1"
 OUTPUT_FILE="$2"
 API_URL="https://nextevent-diczrrhb6a-uc.a.run.app/"
-DEFAULT_POSTER="/assets/S4-Default-Normal.png"
+DEFAULT_POSTER="./assets/S4-Default-Normal.png"
 TMP_FILE="${OUTPUT_FILE}_download"
 
 echo "Fetching JSON from ${API_URL}..." >&2
@@ -31,13 +31,22 @@ fi
 
 if [ -z "${poster_url:-}" ] || [ "${poster_url}" = "null" ]; then
   echo "Warning: ${JSON_PATH} not found in JSON, using default poster" >&2
-  poster_url="${DEFAULT_POSTER}"
+  cp "${DEFAULT_POSTER}" "${TMP_FILE}"
+  if command -v convert >/dev/null 2>&1; then
+    echo "Normalizing image to PNG using ImageMagick..." >&2
+    convert "${TMP_FILE}" "${OUTPUT_FILE}"
+    rm -f "${TMP_FILE}"
+  else
+    mv -f "${TMP_FILE}" "${OUTPUT_FILE}"
+  fi
+  echo "Saved poster to ${OUTPUT_FILE}" >&2
+  exit 0
 fi
 
 echo "Downloading poster from ${poster_url}..." >&2
 if ! curl -fsSL "${poster_url}" -o "${TMP_FILE}"; then
   echo "Error downloading poster, using default poster" >&2
-  curl -fsSL "${DEFAULT_POSTER}" -o "${TMP_FILE}"
+  cp "${DEFAULT_POSTER}" "${TMP_FILE}"
 fi
 
 if command -v convert >/dev/null 2>&1; then
