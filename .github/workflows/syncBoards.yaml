@@ -62,7 +62,7 @@ jobs:
 
     - name: Fetch host poster image
       run: |
-        ./fetch_poster.sh ".event.reconciled.host.host_poster_path" "host_poster.png"
+        ./fetch_poster.sh ".event.reconciled.host.host_poster_url" "host_poster.png"
 
     - name: Commit updated files (if changed)
       uses: stefanzweifel/git-auto-commit-action@v5
