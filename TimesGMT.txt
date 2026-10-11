@@ -7,5 +7,5 @@ Lineup: (times GMT)
 20:00 Bucker Fuskyote
 21:00 RamBrissot
 22:00 Stereo
-23:00 Styx
+23:00 Styx  DEBUTT
 00:00 Azalea the Witch
