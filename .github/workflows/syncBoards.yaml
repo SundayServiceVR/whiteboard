@@ -1,11 +1,8 @@
 name: Sync Board Texts
 
-#0 0 * * * 
+# Board texts and posters are now pushed to this repo by the syncWhiteboard* Cloud Functions
+# in sunday-service-vr.  This workflow is kept as a manual fallback only.
 on:
-    schedule:
-      - cron: "0 0 * * *"   #Every Day at Midnight
-      - cron: "*/30 * * * SUN"   #Every 30 minutes, only on Sunday
-      
     workflow_dispatch:
 
 permissions:
